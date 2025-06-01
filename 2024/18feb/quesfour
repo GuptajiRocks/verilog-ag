@@ -1,0 +1,89 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_007D8758 .scope module, "quesfour_tb" "quesfour_tb" 2 1;
+ .timescale 0 0;
+v010B56A8_0 .var "A", 0 0;
+v010B5020_0 .var "SA", 0 0;
+v010B50D0_0 .var "SB", 0 0;
+v010B5128_0 .net "Y0", 0 0, L_007DEE00; 1 drivers
+v010B5230_0 .net "Y1", 0 0, L_010B9B08; 1 drivers
+v010B5548_0 .net "Y2", 0 0, L_010B9A98; 1 drivers
+v010B5338_0 .net "Y3", 0 0, L_010B98D8; 1 drivers
+S_007D8C20 .scope module, "inst" "quesfour" 2 6, 3 1, S_007D8758;
+ .timescale 0 0;
+L_007D4E48 .functor NOT 1, v010B5020_0, C4<0>, C4<0>, C4<0>;
+L_007D4710 .functor NOT 1, v010B50D0_0, C4<0>, C4<0>, C4<0>;
+L_007D4780 .functor AND 1, L_007D4E48, L_007D4710, C4<1>, C4<1>;
+L_007DEE00 .functor AND 1, L_007D4780, v010B56A8_0, C4<1>, C4<1>;
+L_007DEEE0 .functor NOT 1, v010B5020_0, C4<0>, C4<0>, C4<0>;
+L_007DEF18 .functor AND 1, L_007DEEE0, v010B50D0_0, C4<1>, C4<1>;
+L_010B9B08 .functor AND 1, L_007DEF18, v010B56A8_0, C4<1>, C4<1>;
+L_010B9B78 .functor NOT 1, v010B50D0_0, C4<0>, C4<0>, C4<0>;
+L_010B9868 .functor AND 1, v010B5020_0, L_010B9B78, C4<1>, C4<1>;
+L_010B9A98 .functor AND 1, L_010B9868, v010B56A8_0, C4<1>, C4<1>;
+L_010B98A0 .functor AND 1, v010B5020_0, v010B50D0_0, C4<1>, C4<1>;
+L_010B98D8 .functor AND 1, L_010B98A0, v010B56A8_0, C4<1>, C4<1>;
+v007D9EE0_0 .net "A", 0 0, v010B56A8_0; 1 drivers
+v007D3C88_0 .net "SA", 0 0, v010B5020_0; 1 drivers
+v007D3CE0_0 .net "SB", 0 0, v010B50D0_0; 1 drivers
+v007D3D38_0 .alias "Y0", 0 0, v010B5128_0;
+v007D4680_0 .alias "Y1", 0 0, v010B5230_0;
+v010B5700_0 .alias "Y2", 0 0, v010B5548_0;
+v010B5498_0 .alias "Y3", 0 0, v010B5338_0;
+v010B5180_0 .net *"_s0", 0 0, L_007D4E48; 1 drivers
+v010B5288_0 .net *"_s10", 0 0, L_007DEF18; 1 drivers
+v010B5078_0 .net *"_s14", 0 0, L_010B9B78; 1 drivers
+v010B52E0_0 .net *"_s16", 0 0, L_010B9868; 1 drivers
+v010B5758_0 .net *"_s2", 0 0, L_007D4710; 1 drivers
+v010B51D8_0 .net *"_s20", 0 0, L_010B98A0; 1 drivers
+v010B5390_0 .net *"_s4", 0 0, L_007D4780; 1 drivers
+v010B5440_0 .net *"_s8", 0 0, L_007DEEE0; 1 drivers
+    .scope S_007D8758;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "quesfour_sim.vcd";
+    %vpi_call 2 18 "$dumpvars";
+    %set/v v010B5020_0, 0, 1;
+    %set/v v010B50D0_0, 0, 1;
+    %set/v v010B56A8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 0, 1;
+    %set/v v010B50D0_0, 0, 1;
+    %set/v v010B56A8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 0, 1;
+    %set/v v010B50D0_0, 1, 1;
+    %set/v v010B56A8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 0, 1;
+    %set/v v010B50D0_0, 1, 1;
+    %set/v v010B56A8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 1, 1;
+    %set/v v010B50D0_0, 0, 1;
+    %set/v v010B56A8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 1, 1;
+    %set/v v010B50D0_0, 0, 1;
+    %set/v v010B56A8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 1, 1;
+    %set/v v010B50D0_0, 1, 1;
+    %set/v v010B56A8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v010B5020_0, 1, 1;
+    %set/v v010B50D0_0, 1, 1;
+    %set/v v010B56A8_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 29 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "quesfour_tb.v";
+    "quesfour.v";

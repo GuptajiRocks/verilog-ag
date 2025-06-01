@@ -1,0 +1,65 @@
+$date
+	Mon Apr 08 11:32:21 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module one_tb $end
+$var wire 1 ! D0 $end
+$var wire 1 " D1 $end
+$var wire 1 # D2 $end
+$var wire 1 $ D3 $end
+$var reg 1 % X0 $end
+$var reg 1 & X1 $end
+$scope module dut $end
+$var wire 1 ' X0 $end
+$var wire 1 ( X1 $end
+$var reg 1 ) D0 $end
+$var reg 1 * D1 $end
+$var reg 1 + D2 $end
+$var reg 1 , D3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+0+
+0*
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+1!
+$end
+#10
+0)
+0!
+1*
+1"
+1%
+1'
+#20
+0*
+0"
+1+
+1#
+0%
+0'
+1&
+1(
+#30
+0+
+0#
+1,
+1$
+1%
+1'
+#40

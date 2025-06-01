@@ -1,0 +1,108 @@
+$date
+	Mon Apr 01 11:54:06 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module quesfour_tb $end
+$var wire 3 ! Y [2:0] $end
+$var reg 1 " D0 $end
+$var reg 1 # D1 $end
+$var reg 1 $ D2 $end
+$var reg 1 % D3 $end
+$var reg 1 & D4 $end
+$var reg 1 ' D5 $end
+$var reg 1 ( D6 $end
+$var reg 1 ) D7 $end
+$scope module dut $end
+$var wire 1 * D0 $end
+$var wire 1 + D1 $end
+$var wire 1 , D2 $end
+$var wire 1 - D3 $end
+$var wire 1 . D4 $end
+$var wire 1 / D5 $end
+$var wire 1 0 D6 $end
+$var wire 1 1 D7 $end
+$var reg 3 2 Y [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 2
+01
+00
+0/
+0.
+0-
+0,
+0+
+1*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+1"
+b0 !
+$end
+#10
+b1 2
+b1 !
+0"
+0*
+1#
+1+
+#20
+b10 2
+b10 !
+0#
+0+
+1$
+1,
+#30
+b11 2
+b11 !
+0$
+0,
+1%
+1-
+#40
+b100 2
+b100 !
+0%
+0-
+1&
+1.
+#50
+b101 2
+b101 !
+0&
+0.
+1'
+1/
+#60
+b110 2
+b110 !
+0'
+0/
+1(
+10
+#70
+b111 2
+b111 !
+0(
+00
+1)
+11
+#80
+b111 2
+b111 !
+1'
+1/
+#90

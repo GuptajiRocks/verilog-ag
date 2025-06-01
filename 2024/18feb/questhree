@@ -1,0 +1,70 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01107E20 .scope module, "questhree_tb" "questhree_tb" 2 1;
+ .timescale 0 0;
+v0110E560_0 .var "A", 0 0;
+v0110E5B8_0 .var "B", 0 0;
+v0110E610_0 .var "S", 0 0;
+v0110E668_0 .net "Y", 0 0, L_0110E848; 1 drivers
+S_01104680 .scope module, "inst" "questhree" 2 6, 3 1, S_01107E20;
+ .timescale 0 0;
+L_0110E6C0 .functor NOT 1, v0110E610_0, C4<0>, C4<0>, C4<0>;
+L_0110E730 .functor AND 1, v0110E560_0, L_0110E6C0, C4<1>, C4<1>;
+L_0110E7D8 .functor AND 1, v0110E610_0, v0110E5B8_0, C4<1>, C4<1>;
+L_0110E848 .functor OR 1, L_0110E730, L_0110E7D8, C4<0>, C4<0>;
+v01107EA8_0 .net "A", 0 0, v0110E560_0; 1 drivers
+v01104708_0 .net "B", 0 0, v0110E5B8_0; 1 drivers
+v01104760_0 .net "S", 0 0, v0110E610_0; 1 drivers
+v01104B80_0 .alias "Y", 0 0, v0110E668_0;
+v01104BD8_0 .net *"_s0", 0 0, L_0110E6C0; 1 drivers
+v01104C30_0 .net *"_s2", 0 0, L_0110E730; 1 drivers
+v01104C88_0 .net *"_s4", 0 0, L_0110E7D8; 1 drivers
+    .scope S_01107E20;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "questhree_sim.vcd";
+    %vpi_call 2 15 "$dumpvars";
+    %set/v v0110E610_0, 0, 1;
+    %set/v v0110E560_0, 0, 1;
+    %set/v v0110E5B8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 0, 1;
+    %set/v v0110E560_0, 0, 1;
+    %set/v v0110E5B8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 0, 1;
+    %set/v v0110E560_0, 1, 1;
+    %set/v v0110E5B8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 0, 1;
+    %set/v v0110E560_0, 1, 1;
+    %set/v v0110E5B8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 1, 1;
+    %set/v v0110E560_0, 0, 1;
+    %set/v v0110E5B8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 1, 1;
+    %set/v v0110E560_0, 0, 1;
+    %set/v v0110E5B8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 1, 1;
+    %set/v v0110E560_0, 1, 1;
+    %set/v v0110E5B8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0110E610_0, 1, 1;
+    %set/v v0110E560_0, 1, 1;
+    %set/v v0110E5B8_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "questhree_tb.v";
+    "questhree.v";

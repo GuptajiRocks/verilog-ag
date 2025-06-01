@@ -1,0 +1,71 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00A895D8 .scope module, "graytobin_tb" "graytobin_tb" 2 1;
+ .timescale 0 0;
+RS_00963DB4 .resolv tri, L_00984FA8, L_00985108, L_00984EF8, C4<zzz>;
+v00984DC8_0 .net8 "binary", 2 0, RS_00963DB4; 3 drivers
+v00984E20_0 .var "gray", 2 0;
+S_00A89A18 .scope module, "inst" "graytobin" 2 6, 3 1, S_00A895D8;
+ .timescale 0 0;
+L_009856B8 .functor XOR 1, L_009854D0, L_00985000, C4<0>, C4<0>;
+L_00985680 .functor XOR 1, L_009856B8, L_00985478, C4<0>, C4<0>;
+L_00985A58 .functor XOR 1, L_00985160, L_00984EA0, C4<0>, C4<0>;
+v00A83FC0_0 .net *"_s10", 0 0, L_00985680; 1 drivers
+v00A84018_0 .net *"_s15", 0 0, L_00985160; 1 drivers
+v00A84070_0 .net *"_s17", 0 0, L_00984EA0; 1 drivers
+v00A8EEB8_0 .net *"_s18", 0 0, L_00985A58; 1 drivers
+v00A8EF10_0 .net *"_s23", 0 0, L_00985058; 1 drivers
+v00A8EF68_0 .net *"_s3", 0 0, L_009854D0; 1 drivers
+v00A831E0_0 .net *"_s5", 0 0, L_00985000; 1 drivers
+v00A83238_0 .net *"_s6", 0 0, L_009856B8; 1 drivers
+v00A83290_0 .net *"_s9", 0 0, L_00985478; 1 drivers
+v00984D18_0 .alias "binary", 2 0, v00984DC8_0;
+v00984D70_0 .net "gray", 2 0, v00984E20_0; 1 drivers
+L_00984FA8 .part/pv L_00985680, 0, 1, 3;
+L_009854D0 .part v00984E20_0, 2, 1;
+L_00985000 .part v00984E20_0, 1, 1;
+L_00985478 .part v00984E20_0, 0, 1;
+L_00985108 .part/pv L_00985A58, 1, 1, 3;
+L_00985160 .part v00984E20_0, 2, 1;
+L_00984EA0 .part v00984E20_0, 1, 1;
+L_00984EF8 .part/pv L_00985058, 2, 1, 3;
+L_00985058 .part v00984E20_0, 2, 1;
+    .scope S_00A895D8;
+T_0 ;
+    %vpi_call 2 9 "$monitor", "Gray = %b --> Binary = %b", v00984E20_0, v00984DC8_0;
+    %vpi_call 2 10 "$dumpfile", "graytobin_sim.vcd";
+    %vpi_call 2 11 "$dumpvars";
+    %set/v v00984E20_0, 0, 3;
+    %delay 1, 0;
+    %movi 8, 1, 3;
+    %set/v v00984E20_0, 8, 3;
+    %delay 1, 0;
+    %movi 8, 3, 3;
+    %set/v v00984E20_0, 8, 3;
+    %delay 1, 0;
+    %movi 8, 2, 3;
+    %set/v v00984E20_0, 8, 3;
+    %delay 1, 0;
+    %movi 8, 6, 3;
+    %set/v v00984E20_0, 8, 3;
+    %delay 1, 0;
+    %set/v v00984E20_0, 1, 3;
+    %delay 1, 0;
+    %movi 8, 5, 3;
+    %set/v v00984E20_0, 8, 3;
+    %delay 1, 0;
+    %movi 8, 4, 3;
+    %set/v v00984E20_0, 8, 3;
+    %delay 1, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "graytobin_tb.v";
+    "graytobin.v";

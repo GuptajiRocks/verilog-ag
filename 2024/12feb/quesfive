@@ -1,0 +1,77 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011A7FA0 .scope module, "quesfive_tb" "quesfive_tb" 2 1;
+ .timescale 0 0;
+v011ADB68_0 .var "A", 0 0;
+v011ADBC0_0 .var "B", 0 0;
+v011ADC18_0 .var "C", 0 0;
+v011ADD20_0 .net "W", 0 0, L_011A31E0; 1 drivers
+v011AE480_0 .net "X", 0 0, L_01054E80; 1 drivers
+v011AE110_0 .net "Y", 0 0, L_01054EB8; 1 drivers
+v011AE4D8_0 .net "Z", 0 0, L_010550E8; 1 drivers
+S_011A8138 .scope module, "inst" "quesfive" 2 12, 3 1, S_011A7FA0;
+ .timescale 0 0;
+L_011AEF88 .functor OR 1, v011ADBC0_0, v011ADC18_0, C4<0>, C4<0>;
+L_011A31E0 .functor AND 1, v011ADB68_0, L_011AEF88, C4<1>, C4<1>;
+L_011A32C0 .functor NOT 1, v011ADB68_0, C4<0>, C4<0>, C4<0>;
+L_011A32F8 .functor OR 1, v011ADBC0_0, v011ADC18_0, C4<0>, C4<0>;
+L_011A47E0 .functor AND 1, L_011A32C0, L_011A32F8, C4<1>, C4<1>;
+L_011A4888 .functor NOT 1, v011ADBC0_0, C4<0>, C4<0>, C4<0>;
+L_011A98A0 .functor AND 1, v011ADB68_0, L_011A4888, C4<1>, C4<1>;
+L_01054C68 .functor NOT 1, v011ADC18_0, C4<0>, C4<0>, C4<0>;
+L_011A98D8 .functor AND 1, L_011A98A0, L_01054C68, C4<1>, C4<1>;
+L_01054E80 .functor OR 1, L_011A47E0, L_011A98D8, C4<0>, C4<0>;
+L_01054F28 .functor NOT 1, v011ADBC0_0, C4<0>, C4<0>, C4<0>;
+L_01054DD8 .functor NOT 1, v011ADC18_0, C4<0>, C4<0>, C4<0>;
+L_01054F60 .functor AND 1, L_01054F28, L_01054DD8, C4<1>, C4<1>;
+L_010550B0 .functor AND 1, v011ADBC0_0, v011ADC18_0, C4<1>, C4<1>;
+L_01054EB8 .functor OR 1, L_01054F60, L_010550B0, C4<0>, C4<0>;
+L_010550E8 .functor NOT 1, v011ADC18_0, C4<0>, C4<0>, C4<0>;
+v011A97F0_0 .net "A", 0 0, v011ADB68_0; 1 drivers
+v011AD900_0 .net "B", 0 0, v011ADBC0_0; 1 drivers
+v011ADDD0_0 .net "C", 0 0, v011ADC18_0; 1 drivers
+v011AD7A0_0 .alias "W", 0 0, v011ADD20_0;
+v011AD8A8_0 .alias "X", 0 0, v011AE480_0;
+v011ADED8_0 .alias "Y", 0 0, v011AE110_0;
+v011ADD78_0 .alias "Z", 0 0, v011AE4D8_0;
+v011ADAB8_0 .net *"_s0", 0 0, L_011AEF88; 1 drivers
+v011AD7F8_0 .net *"_s10", 0 0, L_011A4888; 1 drivers
+v011ADB10_0 .net *"_s12", 0 0, L_011A98A0; 1 drivers
+v011ADC70_0 .net *"_s14", 0 0, L_01054C68; 1 drivers
+v011AD850_0 .net *"_s16", 0 0, L_011A98D8; 1 drivers
+v011ADCC8_0 .net *"_s20", 0 0, L_01054F28; 1 drivers
+v011AD958_0 .net *"_s22", 0 0, L_01054DD8; 1 drivers
+v011AD9B0_0 .net *"_s24", 0 0, L_01054F60; 1 drivers
+v011ADE28_0 .net *"_s26", 0 0, L_010550B0; 1 drivers
+v011ADA08_0 .net *"_s4", 0 0, L_011A32C0; 1 drivers
+v011ADA60_0 .net *"_s6", 0 0, L_011A32F8; 1 drivers
+v011ADE80_0 .net *"_s8", 0 0, L_011A47E0; 1 drivers
+    .scope S_011A7FA0;
+T_0 ;
+    %vpi_call 2 23 "$dumpfile", "quesfive_sim.vcd";
+    %vpi_call 2 24 "$dumpvars";
+    %set/v v011ADB68_0, 0, 1;
+    %set/v v011ADBC0_0, 0, 1;
+    %set/v v011ADC18_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011ADB68_0, 1, 1;
+    %set/v v011ADBC0_0, 0, 1;
+    %set/v v011ADC18_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011ADB68_0, 1, 1;
+    %set/v v011ADBC0_0, 1, 1;
+    %set/v v011ADC18_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 33 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "quesfive_tb.v";
+    "quesfive.v";

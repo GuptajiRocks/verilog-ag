@@ -1,0 +1,55 @@
+$date
+	Sat Apr 13 18:43:51 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module one_tb $end
+$var wire 4 ! O [3:0] $end
+$var reg 4 " A [3:0] $end
+$var reg 4 # B [3:0] $end
+$var reg 3 $ OP [2:0] $end
+$var reg 1 % clk $end
+$scope module inst $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 3 ( OP [2:0] $end
+$var wire 4 ) Result [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0x0 )
+b0 (
+b1 '
+b1 &
+0%
+b0 $
+b1 #
+b1 "
+b0x0 !
+$end
+#5
+b0 !
+b0 )
+b1 $
+b1 (
+1%
+#10
+b0x !
+b0x )
+b10 $
+b10 (
+0%
+#15
+b0 !
+b0 )
+b11 $
+b11 (
+1%
+#20
+0%

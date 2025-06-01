@@ -1,0 +1,106 @@
+$date
+	Sat Apr 13 18:51:26 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module one_tb $end
+$var wire 1 ! CarryOut $end
+$var wire 8 " Result [7:0] $end
+$var wire 1 # Zero $end
+$var reg 8 $ A [7:0] $end
+$var reg 8 % B [7:0] $end
+$var reg 4 & Opcode [3:0] $end
+$scope module ONE $end
+$var wire 8 ' A [7:0] $end
+$var wire 8 ( B [7:0] $end
+$var wire 4 ) Opcode [3:0] $end
+$var reg 1 * CarryOut $end
+$var reg 8 + Result [7:0] $end
+$var reg 1 , Zero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+b1000 +
+0*
+b0 )
+b11 (
+b101 '
+b0 &
+b11 %
+b101 $
+0#
+b1000 "
+0!
+$end
+#10
+1,
+1#
+1*
+1!
+b0 +
+b0 "
+b1 %
+b1 (
+b11111111 $
+b11111111 '
+#20
+0,
+0#
+0*
+0!
+b11111101 +
+b11111101 "
+b1 &
+b1 )
+b1000 %
+b1000 (
+b101 $
+b101 '
+#30
+b11111111 +
+b11111111 "
+b1 %
+b1 (
+b0 $
+b0 '
+#40
+1,
+1#
+b0 +
+b0 "
+b10 &
+b10 )
+b1010101 %
+b1010101 (
+b10101010 $
+b10101010 '
+#50
+0,
+0#
+b11111111 +
+b11111111 "
+b11 &
+b11 )
+#60
+b100 &
+b100 )
+#70
+b1010101 +
+b1010101 "
+b101 &
+b101 )
+#80
+b10101000 +
+b10101000 "
+b110 &
+b110 )
+b10 %
+b10 (
+#90

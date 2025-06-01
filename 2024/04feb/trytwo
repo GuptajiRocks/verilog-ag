@@ -1,0 +1,47 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010935C0 .scope module, "tryone" "tryone" 2 1;
+ .timescale 0 0;
+L_01093648 .functor NOT 1, C4<z>, C4<0>, C4<0>, C4<0>;
+v01094078_0 .net "A", 0 0, C4<z>; 0 drivers
+v010940D0_0 .net "Y", 0 0, L_01093648; 1 drivers
+S_01093FF0 .scope module, "tryone_tb" "tryone_tb" 3 1;
+ .timescale 0 0;
+v01093268_0 .var "A", 0 0;
+v010932C0_0 .var "B", 0 0;
+v01093318_0 .net "Y", 0 0, L_0109DE80; 1 drivers
+S_01098650 .scope module, "inst" "trytwo" 3 7, 2 10, S_01093FF0;
+ .timescale 0 0;
+L_0109DE80 .functor NAND 1, v01093268_0, v010932C0_0, C4<1>, C4<1>;
+v010986D8_0 .net "C", 0 0, v01093268_0; 1 drivers
+v01098730_0 .net "D", 0 0, v010932C0_0; 1 drivers
+v01093210_0 .alias "M", 0 0, v01093318_0;
+    .scope S_01093FF0;
+T_0 ;
+    %vpi_call 3 14 "$dumpfile", "tryone_sim.vcd";
+    %vpi_call 3 15 "$dumpvars";
+    %set/v v01093268_0, 0, 1;
+    %set/v v010932C0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01093268_0, 1, 1;
+    %set/v v010932C0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01093268_0, 0, 1;
+    %set/v v010932C0_0, 1, 1;
+    %delay 10, 0;
+    %set/v v01093268_0, 1, 1;
+    %set/v v010932C0_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 3 25 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tryone.v";
+    "tryone_tb.v";

@@ -1,0 +1,85 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011C84B0 .scope module, "one_tb" "one_tb" 2 1;
+ .timescale 0 0;
+v011CE9A8_0 .var "rolla", 0 0;
+v011CE950_0 .var "rollb", 0 0;
+v011CE480_0 .var "rollc", 0 0;
+v011CE7F0_0 .net "volb", 0 0, L_011CEDE0; 1 drivers
+v011CE4D8_0 .net "vold", 0 0, L_011CEC20; 1 drivers
+v011CE530_0 .net "volpc", 0 0, L_011CEBB0; 1 drivers
+v011CE8F8_0 .net "volps", 0 0, L_011CAB78; 1 drivers
+S_011C8648 .scope module, "inst" "one" 2 5, 3 1, S_011C84B0;
+ .timescale 0 0;
+L_011CAAD0 .functor XOR 1, v011CE950_0, v011CE480_0, C4<0>, C4<0>;
+L_011CAB78 .functor XOR 1, v011CE9A8_0, L_011CAAD0, C4<0>, C4<0>;
+L_011CAC58 .functor AND 1, v011CE9A8_0, v011CE950_0, C4<1>, C4<1>;
+L_011CAC90 .functor AND 1, v011CE950_0, v011CE480_0, C4<1>, C4<1>;
+L_011CAB08 .functor OR 1, L_011CAC58, L_011CAC90, C4<0>, C4<0>;
+L_011CEB78 .functor AND 1, v011CE480_0, v011CE9A8_0, C4<1>, C4<1>;
+L_011CEBB0 .functor OR 1, L_011CAB08, L_011CEB78, C4<0>, C4<0>;
+L_011CEC20 .functor XOR 1, v011CE9A8_0, v011CE950_0, C4<0>, C4<0>;
+L_011CEC58 .functor NOT 1, v011CE9A8_0, C4<0>, C4<0>, C4<0>;
+L_011CEDE0 .functor AND 1, L_011CEC58, v011CE950_0, C4<1>, C4<1>;
+v011C4680_0 .net *"_s0", 0 0, L_011CAAD0; 1 drivers
+v011C46D8_0 .net *"_s10", 0 0, L_011CEB78; 1 drivers
+v011C4730_0 .net *"_s16", 0 0, L_011CEC58; 1 drivers
+v011C33E8_0 .net *"_s4", 0 0, L_011CAC58; 1 drivers
+v011C3440_0 .net *"_s6", 0 0, L_011CAC90; 1 drivers
+v011C3498_0 .net *"_s8", 0 0, L_011CAB08; 1 drivers
+v011C34F0_0 .net "rolla", 0 0, v011CE9A8_0; 1 drivers
+v011CE690_0 .net "rollb", 0 0, v011CE950_0; 1 drivers
+v011CE8A0_0 .net "rollc", 0 0, v011CE480_0; 1 drivers
+v011CE3D0_0 .alias "volb", 0 0, v011CE7F0_0;
+v011CE6E8_0 .alias "vold", 0 0, v011CE4D8_0;
+v011CE588_0 .alias "volpc", 0 0, v011CE530_0;
+v011CE428_0 .alias "volps", 0 0, v011CE8F8_0;
+    .scope S_011C84B0;
+T_0 ;
+    %vpi_call 2 16 "$dumpfile", "one_sim.vcd";
+    %vpi_call 2 17 "$dumpvars";
+    %set/v v011CE9A8_0, 0, 1;
+    %set/v v011CE950_0, 0, 1;
+    %set/v v011CE480_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 0, 1;
+    %set/v v011CE950_0, 0, 1;
+    %set/v v011CE480_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 0, 1;
+    %set/v v011CE950_0, 1, 1;
+    %set/v v011CE480_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 0, 1;
+    %set/v v011CE950_0, 1, 1;
+    %set/v v011CE480_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 1, 1;
+    %set/v v011CE950_0, 0, 1;
+    %set/v v011CE480_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 1, 1;
+    %set/v v011CE950_0, 0, 1;
+    %set/v v011CE480_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 1, 1;
+    %set/v v011CE950_0, 1, 1;
+    %set/v v011CE480_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011CE9A8_0, 1, 1;
+    %set/v v011CE950_0, 1, 1;
+    %set/v v011CE480_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 28 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "one_tb.v";
+    "one.v";

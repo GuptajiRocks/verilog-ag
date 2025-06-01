@@ -1,0 +1,91 @@
+$date
+	Mon Mar 18 11:57:48 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module quesfive_tb $end
+$var wire 1 ! F $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$var reg 1 $ C $end
+$scope module dut $end
+$var wire 1 % A $end
+$var wire 1 & B $end
+$var wire 1 ' C $end
+$var wire 1 ! F $end
+$var wire 1 ( d0 $end
+$var wire 1 ) d1 $end
+$var wire 1 * d2 $end
+$var wire 1 + d3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1+
+0*
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+1!
+$end
+#10
+0!
+0+
+1$
+1(
+1'
+#20
+1!
+1+
+0$
+0(
+0'
+1#
+1&
+#30
+0+
+1$
+1(
+1'
+#40
+0!
+1*
+0)
+0$
+0(
+0'
+0#
+0&
+1"
+1%
+#50
+0*
+1!
+1$
+1(
+1'
+#60
+1*
+1!
+0$
+0(
+0'
+1#
+1&
+#70
+0!
+0*
+1$
+1(
+1'
+#80

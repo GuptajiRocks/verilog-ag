@@ -1,0 +1,95 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0098C7D8 .scope module, "quesfive_tb" "quesfive_tb" 2 1;
+ .timescale 0 0;
+v0113EA80_0 .var "A", 0 0;
+v0113EC90_0 .var "B", 0 0;
+v0113EB30_0 .var "C", 0 0;
+v0113EB88_0 .net "F", 0 0, L_0113EBE0; 1 drivers
+S_0098C8E8 .scope module, "dut" "quesfive" 2 7, 3 1, S_0098C7D8;
+ .timescale 0 0;
+L_00984728 .functor BUFZ 1, v0113EB30_0, C4<0>, C4<0>, C4<0>;
+L_00984798 .functor NOT 1, v0113EA80_0, C4<0>, C4<0>, C4<0>;
+L_00983CF0 .functor NOT 1, v0113EB30_0, C4<0>, C4<0>, C4<0>;
+L_00983D28 .functor AND 1, v0113EA80_0, L_00983CF0, C4<1>, C4<1>;
+L_00983D98 .functor NOT 1, v0113EA80_0, C4<0>, C4<0>, C4<0>;
+L_00983CB8 .functor NOT 1, v0113EB30_0, C4<0>, C4<0>, C4<0>;
+L_00984760 .functor AND 1, L_00983D98, L_00983CB8, C4<1>, C4<1>;
+L_0098AC88 .functor NOT 1, v0113EC90_0, C4<0>, C4<0>, C4<0>;
+L_0113F258 .functor AND 1, v0113EA80_0, L_0098AC88, C4<1>, C4<1>;
+L_0113F3E0 .functor NOT 1, v0113EA80_0, C4<0>, C4<0>, C4<0>;
+L_0113F220 .functor AND 1, L_0113F3E0, v0113EC90_0, C4<1>, C4<1>;
+L_0113F1E8 .functor AND 1, v0113EA80_0, v0113EC90_0, C4<1>, C4<1>;
+v0098E8E0_0 .net "A", 0 0, v0113EA80_0; 1 drivers
+v0098BED8_0 .net "B", 0 0, v0113EC90_0; 1 drivers
+v0098BF30_0 .net "C", 0 0, v0113EB30_0; 1 drivers
+v0098BF88_0 .alias "F", 0 0, v0113EB88_0;
+v00984680_0 .net *"_s10", 0 0, L_00983CB8; 1 drivers
+v0113EFA8_0 .net *"_s14", 0 0, L_0098AC88; 1 drivers
+v0113EC38_0 .net *"_s16", 0 0, L_0113F258; 1 drivers
+v0113EF50_0 .net *"_s18", 0 0, L_0113F3E0; 1 drivers
+v0113E920_0 .net *"_s20", 0 0, L_0113F220; 1 drivers
+v0113EA28_0 .net *"_s22", 0 0, L_0113F1E8; 1 drivers
+v0113ED98_0 .net *"_s24", 0 0, L_0113ECE8; 1 drivers
+v0113F000_0 .net *"_s26", 0 0, L_0113ED40; 1 drivers
+v0113E8C8_0 .net *"_s4", 0 0, L_00983CF0; 1 drivers
+v0113EDF0_0 .net *"_s8", 0 0, L_00983D98; 1 drivers
+v0113E978_0 .net "d0", 0 0, L_00984728; 1 drivers
+v0113E9D0_0 .net "d1", 0 0, L_00984798; 1 drivers
+v0113EEA0_0 .net "d2", 0 0, L_00983D28; 1 drivers
+v0113EAD8_0 .net "d3", 0 0, L_00984760; 1 drivers
+L_0113ECE8 .functor MUXZ 1, L_00984760, L_00983D28, L_0113F1E8, C4<>;
+L_0113ED40 .functor MUXZ 1, L_0113ECE8, L_00984798, L_0113F220, C4<>;
+L_0113EBE0 .functor MUXZ 1, L_0113ED40, L_00984728, L_0113F258, C4<>;
+    .scope S_0098C7D8;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "quesfive_sim.vcd";
+    %vpi_call 2 12 "$dumpvars";
+    %vpi_call 2 13 "$display", "A B C | F";
+    %vpi_call 2 14 "$display", "-------";
+    %vpi_call 2 15 "$monitor", "%b %b %b | %b", v0113EA80_0, v0113EC90_0, v0113EB30_0, v0113EB88_0;
+    %set/v v0113EA80_0, 0, 1;
+    %set/v v0113EC90_0, 0, 1;
+    %set/v v0113EB30_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 0, 1;
+    %set/v v0113EC90_0, 0, 1;
+    %set/v v0113EB30_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 0, 1;
+    %set/v v0113EC90_0, 1, 1;
+    %set/v v0113EB30_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 0, 1;
+    %set/v v0113EC90_0, 1, 1;
+    %set/v v0113EB30_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 1, 1;
+    %set/v v0113EC90_0, 0, 1;
+    %set/v v0113EB30_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 1, 1;
+    %set/v v0113EC90_0, 0, 1;
+    %set/v v0113EB30_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 1, 1;
+    %set/v v0113EC90_0, 1, 1;
+    %set/v v0113EB30_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0113EA80_0, 1, 1;
+    %set/v v0113EC90_0, 1, 1;
+    %set/v v0113EB30_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "quesfive_tb.v";
+    "quesfive.v";

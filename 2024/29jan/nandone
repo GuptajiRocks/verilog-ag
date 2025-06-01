@@ -1,0 +1,42 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011A7A60 .scope module, "nandone_tb" "nandone_tb" 2 1;
+ .timescale 0 0;
+v011A3608_0 .var "A", 0 0;
+v011A3660_0 .var "B", 0 0;
+v011A36B8_0 .net "Y", 0 0, L_011A3710; 1 drivers
+S_011A3210 .scope module, "inst" "nandone" 2 6, 3 1, S_011A7A60;
+ .timescale 0 0;
+L_011A3710 .functor NAND 1, v011A3608_0, v011A3660_0, C4<1>, C4<1>;
+v011A7AE8_0 .net "A", 0 0, v011A3608_0; 1 drivers
+v011A3298_0 .net "B", 0 0, v011A3660_0; 1 drivers
+v011A32F0_0 .alias "Y", 0 0, v011A36B8_0;
+    .scope S_011A7A60;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "nand_sim.vcd";
+    %vpi_call 2 14 "$dumpvars";
+    %set/v v011A3608_0, 0, 1;
+    %set/v v011A3660_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011A3608_0, 0, 1;
+    %set/v v011A3660_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011A3608_0, 1, 1;
+    %set/v v011A3660_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011A3608_0, 1, 1;
+    %set/v v011A3660_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nandone_tb.v";
+    "nandone.v";

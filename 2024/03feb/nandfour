@@ -1,0 +1,60 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_009F93B8 .scope module, "nandfour_tb" "nandfour_tb" 2 1;
+ .timescale 0 0;
+v01195DB8_0 .var "A", 0 0;
+v01195F70_0 .var "B", 0 0;
+v01195940_0 .net "Y", 0 0, L_011961D0; 1 drivers
+S_009F92A8 .scope module, "inst" "nandfour" 2 7, 3 1, S_009F93B8;
+ .timescale 0 0;
+L_009F3B18 .functor AND 1, v01195DB8_0, v01195F70_0, C4<1>, C4<1>;
+L_009F3BC0 .functor NOT 1, L_009F3B18, C4<0>, C4<0>, C4<0>;
+L_009FEB48 .functor AND 1, v01195DB8_0, L_009F3BC0, C4<1>, C4<1>;
+L_009FEBB8 .functor NOT 1, L_009FEB48, C4<0>, C4<0>, C4<0>;
+L_009FEC28 .functor AND 1, v01195DB8_0, v01195F70_0, C4<1>, C4<1>;
+L_009F3B50 .functor NOT 1, L_009FEC28, C4<0>, C4<0>, C4<0>;
+L_009FED00 .functor AND 1, L_009F3B50, v01195F70_0, C4<1>, C4<1>;
+L_011963C8 .functor NOT 1, L_009FED00, C4<0>, C4<0>, C4<0>;
+L_01196400 .functor AND 1, L_009FEBB8, L_011963C8, C4<1>, C4<1>;
+L_011961D0 .functor NOT 1, L_01196400, C4<0>, C4<0>, C4<0>;
+v009F9FD0_0 .net "A", 0 0, v01195DB8_0; 1 drivers
+v009FA028_0 .net "B", 0 0, v01195F70_0; 1 drivers
+v009FA080_0 .alias "Y", 0 0, v01195940_0;
+v009F3210_0 .net *"_s0", 0 0, L_009F3B18; 1 drivers
+v009F3268_0 .net *"_s10", 0 0, L_009F3B50; 1 drivers
+v009F32C0_0 .net *"_s12", 0 0, L_009FED00; 1 drivers
+v009F3AC0_0 .net *"_s14", 0 0, L_011963C8; 1 drivers
+v01195CB0_0 .net *"_s16", 0 0, L_01196400; 1 drivers
+v01195EC0_0 .net *"_s2", 0 0, L_009F3BC0; 1 drivers
+v01195D60_0 .net *"_s4", 0 0, L_009FEB48; 1 drivers
+v01195F18_0 .net *"_s6", 0 0, L_009FEBB8; 1 drivers
+v01195BA8_0 .net *"_s8", 0 0, L_009FEC28; 1 drivers
+    .scope S_009F93B8;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "nandfour_sim.vcd";
+    %vpi_call 2 15 "$dumpvars";
+    %set/v v01195DB8_0, 0, 1;
+    %set/v v01195F70_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01195DB8_0, 0, 1;
+    %set/v v01195F70_0, 1, 1;
+    %delay 10, 0;
+    %set/v v01195DB8_0, 1, 1;
+    %set/v v01195F70_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01195DB8_0, 1, 1;
+    %set/v v01195F70_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nandfour_tb.v";
+    "nandfour.v";

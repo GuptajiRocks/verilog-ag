@@ -1,0 +1,31 @@
+$date
+	Mon Apr 08 12:00:09 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module quesfive_tb $end
+$var wire 3 ! encoded_output [2:0] $end
+$var reg 8 " data_in [7:0] $end
+$scope module dut $end
+$var wire 8 # data_in [7:0] $end
+$var reg 3 $ encoded_output [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 $
+b1 #
+b1 "
+b1 !
+$end
+#10
+b100 $
+b100 !
+b1000 "
+b1000 #
+#20

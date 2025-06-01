@@ -1,0 +1,36 @@
+$date
+	Mon Feb 12 12:17:27 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bintogray_tb $end
+$var wire 4 ! gray [3:0] $end
+$var reg 4 " binary [3:0] $end
+$scope module inst $end
+$var wire 4 # binary [3:0] $end
+$var wire 4 $ gray [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111 $
+b1010 #
+b1010 "
+b1111 !
+$end
+#1
+b111 !
+b111 $
+b101 "
+b101 #
+#2
+b11 !
+b11 $
+b10 "
+b10 #
+#3

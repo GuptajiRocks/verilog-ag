@@ -1,0 +1,60 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01229908 .scope module, "nandfive_tb" "nandfive_tb" 2 1;
+ .timescale 0 0;
+v010872F0_0 .var "A", 0 0;
+v010871E8_0 .var "B", 0 0;
+v01087348_0 .net "Y", 0 0, L_01087A30; 1 drivers
+S_01228F78 .scope module, "inst" "nandfive" 2 7, 3 1, S_01229908;
+ .timescale 0 0;
+L_01223B18 .functor AND 1, v010872F0_0, v010871E8_0, C4<1>, C4<1>;
+L_01223BC0 .functor NOT 1, L_01223B18, C4<0>, C4<0>, C4<0>;
+L_0122EB48 .functor AND 1, v010872F0_0, v010872F0_0, C4<1>, C4<1>;
+L_01223B50 .functor NOT 1, L_0122EB48, C4<0>, C4<0>, C4<0>;
+L_0122EC20 .functor AND 1, v010871E8_0, v010871E8_0, C4<1>, C4<1>;
+L_01223B88 .functor NOT 1, L_0122EC20, C4<0>, C4<0>, C4<0>;
+L_0122ECF8 .functor AND 1, L_01223B50, L_01223B88, C4<1>, C4<1>;
+L_0122EDA0 .functor NOT 1, L_0122ECF8, C4<0>, C4<0>, C4<0>;
+L_01087838 .functor AND 1, L_01223BC0, L_0122EDA0, C4<1>, C4<1>;
+L_01087A30 .functor NOT 1, L_01087838, C4<0>, C4<0>, C4<0>;
+v01229FD0_0 .net "A", 0 0, v010872F0_0; 1 drivers
+v0122A028_0 .net "B", 0 0, v010871E8_0; 1 drivers
+v0122A080_0 .alias "Y", 0 0, v01087348_0;
+v01223210_0 .net *"_s0", 0 0, L_01223B18; 1 drivers
+v01223268_0 .net *"_s10", 0 0, L_01223B88; 1 drivers
+v012232C0_0 .net *"_s12", 0 0, L_0122ECF8; 1 drivers
+v01223AC0_0 .net *"_s14", 0 0, L_0122EDA0; 1 drivers
+v01087710_0 .net *"_s16", 0 0, L_01087838; 1 drivers
+v01087240_0 .net *"_s2", 0 0, L_01223BC0; 1 drivers
+v01087298_0 .net *"_s4", 0 0, L_0122EB48; 1 drivers
+v01087190_0 .net *"_s6", 0 0, L_01223B50; 1 drivers
+v01087138_0 .net *"_s8", 0 0, L_0122EC20; 1 drivers
+    .scope S_01229908;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "nandfive_sim.vcd";
+    %vpi_call 2 15 "$dumpvars";
+    %set/v v010872F0_0, 0, 1;
+    %set/v v010871E8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v010872F0_0, 0, 1;
+    %set/v v010871E8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v010872F0_0, 1, 1;
+    %set/v v010871E8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v010872F0_0, 1, 1;
+    %set/v v010871E8_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nandfive_tb.v";
+    "nandfive.v";
