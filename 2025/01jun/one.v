@@ -1,0 +1,9 @@
+module one(
+    input A,
+    input B,
+    output Y
+);
+
+assign Y = (A || B) && (B);
+
+endmodule
